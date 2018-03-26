@@ -5,15 +5,30 @@ var currentTempInCelsius;
 var picUrl;
 
 $(document).ready(function() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var lat = 'lat=' + position.coords.latitude;
-      var lon = 'lon=' + position.coords.longitude;
-      loadWeather(lat, lon);
-    });
+  console.log('start');
+  var latLocal = localStorage.getItem('lat');
+  var lonLocal = localStorage.getItem('lon');
+  if (latLocal != null && lonLocal != null) {
+    var lonLocal = localStorage.getItem('lon');
+    loadWeather(latLocal, lonLocal);
   } else {
-    console.log('Geolocation is not supported by this browser.');
+    if (navigator.geolocation) {
+      console.log('geocall');
+      navigator.geolocation.getCurrentPosition(function(position) {
+        console.log('getCurrentPosition');
+
+        var lat = 'lat=' + position.coords.latitude;
+        var lon = 'lon=' + position.coords.longitude;
+        localStorage.setItem('lat', lat);
+        localStorage.setItem('lon', lon);
+
+        loadWeather(lat, lon);
+      });
+    } else {
+      console.log('Geolocation is not supported by this browser.');
+    }
   }
+  console.log('mitul call after gco', latLocal);
 
   $('#tempunit').click(function() {
     var currentTempUnit = $('#tempunit').text();
