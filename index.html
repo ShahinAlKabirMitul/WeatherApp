@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <script src="JS/jquery-3.3.1.min.js"></script>
+  <script src="js/app.js">
+  </script>
+
+</head>
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .bg {
+    /* The image used */
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/82/3840x2160_%281%29.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: relative;
+    background-repeat: repeat;
+    background-size: cover;
+
+
+  }
+
+  .wather {
+    margin-top: 7%;
+  }
+</style>
+
+<body>
+
+  <div class="container-fluid bg">
+
+    <div class="row ">
+      <header class="col-lg-12 text-center" style="margin-top: 7%">
+        <h1>
+          <span id="city"></span>
+          <span id="countryName"></span>
+          <h1 id="desc"></h1>
+          <h1 id="tempunit" style="cursor:pointer"></h1>
+        </h1>
+      </header>
+
+      <div class="col-lg-12">
+        <div class="text-center">
+
+          <p>
+            <span id="temp" style="font-size: 120px"></span>
+
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
